@@ -10,14 +10,28 @@ variable "HCP_CLIENT_ID" {
   sensitive   = true
 }
 
+variable "KEYVAULT_NAME" {
+    type        = string
+    sensitive   = true
+}
+
+variable "tags" {
+    type        = map(string)
+    sensitive   = true
+}
+
 variable "workload" {
-    type = string
+    type        = string
+    sensitive   = true
 }
 
 variable "location" {
-    type = string
+    type        = string
+    sensitive   = true
 }
 
 variable "resource_group_name" {
-    type = string
+    type        = string
+    sensitive   = true
 }
+
