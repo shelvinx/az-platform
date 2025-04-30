@@ -8,8 +8,15 @@ module "kv" {
     resource_group_name = var.resource_group_name
     tenant_id = data.azurerm_client_config.this.tenant_id
     sku_name = "standard"
-
     enabled_for_deployment = true
+
+    network_acls = {
+        bypass = "AzureServices"
+        default_action = "Deny"
+
+        ip_rules = []
+        virtual_network_rules = []
+    }
 
     tags = var.tags
 }
