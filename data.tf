@@ -7,4 +7,6 @@ data "azuread_user" "user_admin" {
 data "azurerm_user_assigned_identity" "uai_tfvm" {
   name                = "uai-tfvm"
   resource_group_name = var.resource_group_name
+
+  depends_on = [azurerm_user_assigned_identity.uai_tfvm]
 }
