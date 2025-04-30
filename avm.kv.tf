@@ -29,7 +29,7 @@ module "kv" {
         keyvault_contributor = {
             role_definition_id_or_name       = "Key Vault Contributor"
             principal_id                     = data.azurerm_user_assigned_identity.uai_tfvm.principal_id
-            principal_type                   = "UserAssignedIdentity"
+            principal_type                   = "ServicePrincipal"
             skip_service_principal_aad_check = true
         }
     }
