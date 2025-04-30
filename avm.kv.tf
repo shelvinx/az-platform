@@ -7,7 +7,7 @@ module "kv" {
     location = var.location
     resource_group_name = var.resource_group_name
     tenant_id = data.azurerm_client_config.this.tenant_id
-    sku_name = "Standard"
+    sku_name = "standard"
 
     enabled_for_deployment = true
 
