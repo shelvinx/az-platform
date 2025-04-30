@@ -6,5 +6,5 @@ module "kv" {
     name = "module.naming.keyvault.name"
     location = var.location
     resource_group_name = var.resource_group_name
-    tenant_id = var.ARM_TENANT_ID
+    tenant_id = data.azurerm_client_config.this.tenant_id
 }

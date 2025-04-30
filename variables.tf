@@ -10,12 +10,6 @@ variable "HCP_CLIENT_ID" {
   sensitive   = true
 }
 
-variable "ARM_TENANT_ID" {
-  description = "The tenant ID for ARM"
-  type        = string
-  sensitive   = true
-}
-
 variable "workload" {
     type = string
 }
