@@ -26,3 +26,9 @@ provider "azurerm" {
   }
   resource_provider_registrations = "extended"
 }
+
+# HCP Provider - used for Vault
+provider "hcp" {
+  client_id     = var.HCP_CLIENT_ID
+  client_secret = var.HCP_CLIENT_SECRET
+}
