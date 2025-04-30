@@ -22,8 +22,14 @@ module "kv" {
     role_assignments = {
         keyvault_admin = {
             role_definition_id_or_name       = "Key Vault Administrator"
-            principal_id                     = data.azuread_user.this.object_id
+            principal_id                     = data.azuread_user.user_admin.object_id
             principal_type                   = "User"
+            skip_service_principal_aad_check = true
+        }
+        keyvault_contributor = {
+            role_definition_id_or_name       = "Key Vault Contributor"
+            principal_id                     = data.azurerm_user_assigned_identity.uai_tfvm.principal_id
+            principal_type                   = "UserAssignedIdentity"
             skip_service_principal_aad_check = true
         }
     }

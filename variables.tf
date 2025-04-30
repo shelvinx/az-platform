@@ -39,5 +39,3 @@ variable "UPN_ADMIN" {
     type        = string
     sensitive   = true
 }
-
-
