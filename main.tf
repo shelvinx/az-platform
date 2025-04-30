@@ -17,7 +17,7 @@ module "rg" {
 }
 
 # User Assigned Managed ID for Virtual Machines
-resource "azurerm_user_assigned_identity" "uai_vm" {
+resource "azurerm_user_assigned_identity" "uai_tfvm" {
     name = "uai-tfvm"
     location = var.location
     resource_group_name = var.resource_group_name
