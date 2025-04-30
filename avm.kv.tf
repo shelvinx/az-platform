@@ -1,7 +1,7 @@
 # AVM Module for Azure Key Vault
 module "kv" {
     source = "Azure/avm-res-keyvault-vault/azurerm"
-    version = "0.10.0"
+    version = ">= 0.10.0"
 
     name = var.KEYVAULT_NAME
     location = var.location
@@ -18,6 +18,16 @@ module "kv" {
         ip_rules = []
         virtual_network_rules = []
     }
+
+    role_assignments = [
+        {
+            name = "keyvault-admin-assignment"
+            role_definition_name = "Key Vault Administrator"
+            principal_id = data.azuread_user.example.object_id
+            principal_type = "User"
+            skip_service_principal_aad_check = true
+        }
+    ]
 
     tags = var.tags
 }
