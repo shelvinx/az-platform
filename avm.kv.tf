@@ -13,7 +13,7 @@ module "kv" {
 
     network_acls = {
         bypass = "AzureServices"
-        default_action = "Deny"
+        default_action = "Allow"
 
         ip_rules = []
         virtual_network_rules = []
