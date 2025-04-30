@@ -19,15 +19,14 @@ module "kv" {
         virtual_network_rules = []
     }
 
-    role_assignments = [
-        {
-            name = "keyvault-admin-assignment"
-            role_definition_name = "Key Vault Administrator"
-            principal_id = data.azuread_user.example.object_id
-            principal_type = "User"
+    role_assignments = {
+        keyvault_admin = {
+            role_definition_id_or_name       = "Key Vault Administrator"
+            principal_id                     = data.azuread_user.this.object_id
+            principal_type                   = "User"
             skip_service_principal_aad_check = true
         }
-    ]
+    }
 
     tags = var.tags
 }

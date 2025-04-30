@@ -35,7 +35,7 @@ variable "resource_group_name" {
     sensitive   = true
 }
 
-variable "upn_admin" {
+variable "UPN_ADMIN" {
     type        = string
     sensitive   = true
 }
