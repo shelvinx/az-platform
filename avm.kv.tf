@@ -26,8 +26,14 @@ module "kv" {
             principal_type                   = "User"
             skip_service_principal_aad_check = true
         }
-        keyvault_contributor = {
+        kv_secrets_officer = {
             role_definition_id_or_name       = "Key Vault Secrets Officer"
+            principal_id                     = data.azurerm_user_assigned_identity.uai_tfvm.principal_id
+            principal_type                   = "ServicePrincipal"
+            skip_service_principal_aad_check = true
+        }
+        kv_certs_officer = {
+            role_definition_id_or_name       = "Key Vault Certificates Officer"
             principal_id                     = data.azurerm_user_assigned_identity.uai_tfvm.principal_id
             principal_type                   = "ServicePrincipal"
             skip_service_principal_aad_check = true
