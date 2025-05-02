@@ -9,7 +9,7 @@ module "kv" {
     tenant_id = data.azurerm_client_config.this.tenant_id
     sku_name = "standard"
     enabled_for_deployment = true
-    public_network_access_enabled = false # Required for Ansible
+    public_network_access_enabled = true
 
     network_acls = {
         bypass = "AzureServices"
