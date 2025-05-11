@@ -22,6 +22,10 @@ module "vnet_hub" {
         name = "AzureBastionSubnet"
         address_prefix = "10.0.2.0/27"
      }
+     Default = {
+        name = "default"
+        address_prefix = "10.0.3.0/24"
+     }
     }
 
     tags = var.tags
