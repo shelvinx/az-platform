@@ -17,19 +17,3 @@ module "automation_account" {
     component = "automation"
   })
 }
-
-# Outputs
-output "automation_account_name" {
-  description = "The name of the Automation Account"
-  value       = module.automation_account.name
-}
-
-output "automation_account_id" {
-  description = "The ID of the Automation Account"
-  value       = module.automation_account.id
-}
-
-output "system_assigned_identity_principal_id" {
-  description = "The principal ID of the system-assigned managed identity"
-  value       = module.automation_account.system_assigned_identity_principal_id
-}
