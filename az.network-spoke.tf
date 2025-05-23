@@ -14,19 +14,16 @@ module "vnet-spoke" {
     default = {
       name           = "default"
       address_prefix = "10.1.1.0/24"
-      network_security_group = {
-        id = "${module.nsg-default.resource_id}"
-      }
     }
   }
 }
 
 # AVM Module for NSG
-module "nsg-default" {
+module "nsg_spoke" {
   source  = "Azure/avm-res-network-networksecuritygroup/azurerm"
   version = "0.4.0"
 
-  name                = "nsg-default"
+  name                = "nsg-spoke"
   location            = var.location
   resource_group_name = var.resource_group_name
 

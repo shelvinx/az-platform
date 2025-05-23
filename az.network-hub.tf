@@ -25,20 +25,17 @@ module "vnet_hub" {
      Default = {
         name = "default"
         address_prefix = "10.0.3.0/24"
-        network_security_group = {
-            id = "${module.nsg_default.resource_id}"
-        }
      }
     }
 
     tags = var.tags
 }
 
-module "nsg_default" {
+module "nsg_hub" {
     source = "Azure/avm-res-network-networksecuritygroup/azurerm"
     version = "0.4.0"
 
-    name = "nsg-default"
+    name = "nsg-hub"
     location = var.location
     resource_group_name = var.resource_group_name
 
