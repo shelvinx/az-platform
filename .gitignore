@@ -38,4 +38,4 @@ tfplan
 tfplan.*
 
 # Ignore lock files
-.terraform.lock.hcl 
+.terraform.lock.hcl
