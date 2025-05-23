@@ -11,33 +11,33 @@ variable "HCP_CLIENT_ID" {
 }
 
 variable "KEYVAULT_NAME" {
-    type        = string
-    sensitive   = true
+  type      = string
+  sensitive = true
 }
 
 variable "tags" {
-    type        = map(string)
-    sensitive   = true
+  type      = map(string)
+  sensitive = true
 }
 
 variable "workload" {
-    type        = string
-    sensitive   = true
+  type      = string
+  sensitive = true
 }
 
 variable "location" {
-    type        = string
-    sensitive   = true
+  type      = string
+  sensitive = true
 }
 
 variable "resource_group_name" {
-    type        = string
-    sensitive   = true
+  type      = string
+  sensitive = true
 }
 
 variable "UPN_ADMIN" {
-    type        = string
-    sensitive   = true
+  type      = string
+  sensitive = true
 }
 
 # Variables for configuration - Azure Policy
